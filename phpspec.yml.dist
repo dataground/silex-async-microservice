@@ -1,0 +1,5 @@
+# Describe your classes with 'bin/phpspec describe App/YourClass'
+suites:
+    silex_base_suite:
+        namespace: App
+        psr4_prefix: App

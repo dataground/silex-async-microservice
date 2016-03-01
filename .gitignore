@@ -1,0 +1,13 @@
+# Folders.
+
+vendor/
+
+# Files.
+
+composer.lock
+
+# Links.
+
+bin/behat
+bin/phpspec
+bin/phpunit

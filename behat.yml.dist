@@ -1,0 +1,10 @@
+default:
+    formatters:
+        pretty: true
+        progress: true
+    extensions:
+        Behat\MinkExtension:
+            base_url: http://your.virtualhost
+            sessions:
+                default:
+                    goutte: ~
