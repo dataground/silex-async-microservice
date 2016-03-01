@@ -17,13 +17,14 @@ Check ```composer.json``` for current versions.
 
 The global picture:
 
-1. (Controller) Receive an HTTP request with an operation id, parameters and a callback URL. Response 'Working on it'.
-2. (Manager) Construct the operation.
-3. (Producer) Send a message with the operation to the configured external RabbitMQ server queue.
-4. (Consumer/s) Consume the message from the configured external RabbitMQ server queue.
-5. (Manager) Process the operation and send an HTTP request to the callback URL with the operation result.
+1. **Controller** Receive an HTTP request with an operation id, parameters and a callback URL. Response 'Working on it'.
+2. **Manager** Construct the operation.
+3. **Producer** Send a message with the operation to the configured external RabbitMQ server queue.
+4. **Consumer/s** Consume the message from the configured external RabbitMQ server queue.
+5. **Manager** Process the operation and send an HTTP request to the callback URL with the operation result.
 
-Consumers are running processes that keep listening to the queue messages. A console command ```bin/console app:consumer``` is provided to launch consumers and delegate the operation process logic to the manager but a [really simple script](https://github.com/rabbitmq/rabbitmq-tutorials/blob/master/php/receive.php) is all that is needed to launch a consumer. If your consumers are external to the app, you may put the operation process logic in them.
+Consumers are running processes that keep listening to the queue messages.  
+A console command ```bin/console app:consumer``` is provided to launch consumers and delegate the operation process logic to the manager but a [really simple script](https://github.com/rabbitmq/rabbitmq-tutorials/blob/master/php/receive.php) is all that is needed to launch a consumer. If your consumers are external to the app, you may put the operation process logic in them.
 
 ## Structure
 
