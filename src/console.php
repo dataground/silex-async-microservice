@@ -7,7 +7,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 
-$console = new Application('My App', 'v0.1.0');
+$console = new Application('App', 'v0.1.0');
 
 $console->getDefinition()->addOption(
     new InputOption('--env', '-e', InputOption::VALUE_REQUIRED, 'The Environment name.', 'dev')
@@ -16,7 +16,7 @@ $console->getDefinition()->addOption(
 $console->setDispatcher($app['dispatcher']);
 
 $console
-    ->register('myapp:consumer')
+    ->register('app:consumer')
     ->setDefinition(array(
         // new InputArgument('some-argument', InputArgument::OPTIONAL, 'Some help.'),
         // new InputOption('some-option', null, InputOption::VALUE_NONE, 'Some help.'),

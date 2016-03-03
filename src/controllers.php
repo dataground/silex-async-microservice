@@ -24,7 +24,7 @@ $app->error(function (\Exception $e, $code) use ($app) {
 $app->get('/test', function (Request $request) use ($app) {
     $producer = $app['producer'];
 
-    $producer->sendMessage('Yeah');
+    $producer->sendMessage('Test message.');
 
-    return new Response('', 200);
+    return new Response('Test message sent.', 200);
 });

@@ -4,23 +4,21 @@ Silex based asynchronous microservice skeleton with testing tools, RabbitMQ serv
 
 A running [RabbitMQ server](https://www.rabbitmq.com/download.html) is required to manage asynchronous messages.
 
-- [Silex](http://silex.sensiolabs.org/)
-- [Symfony Console](https://packagist.org/packages/symfony/console)
-- [Symfony Monolog Bridge](https://packagist.org/packages/symfony/monolog-bridge)
-- [PHPAMQPlib (RabbitMQ connection)](https://packagist.org/packages/php-amqplib/php-amqplib)
-- [Guzzle HTTP Client](https://packagist.org/packages/guzzlehttp/guzzle)
-- [Behat + Mink Extension + Goutte Driver](http://docs.behat.org/en/v3.0/)
-- [PHPSpec](http://www.phpspec.net/en/latest/manual/introduction.html)
-- [PHPUnit](https://phpunit.de/documentation.html)
-
-Check ```composer.json``` for current versions.
+- [Silex 1.3](http://silex.sensiolabs.org/)
+- [Symfony Console 2.8](https://packagist.org/packages/symfony/console)
+- [Symfony Monolog Bridge 3.0](https://packagist.org/packages/symfony/monolog-bridge)
+- [PHPAMQPLib 2.6](https://packagist.org/packages/php-amqplib/php-amqplib)
+- [Guzzle HTTP Client 6.1](https://packagist.org/packages/guzzlehttp/guzzle)
+- [Behat 3.0 + Mink Extension 2.2 + Goutte Driver 1.2](http://docs.behat.org/en/v3.0/)
+- [PHPSpec 2.4](http://www.phpspec.net/en/latest/manual/introduction.html)
+- [PHPUnit 5.2](https://phpunit.de/documentation.html)
 
 The global picture:
 
 1. **Controller** Receive an HTTP request with an operation id, parameters and a callback URL. Response 'Working on it'.
 2. **Manager** Construct the operation.
-3. **Producer** Send a message with the operation to the configured external RabbitMQ server queue.
-4. **Consumer/s** Consume the message from the configured external RabbitMQ server queue.
+3. **Producer** Send a message with the operation to the RabbitMQ server queue.
+4. **Consumer/s** Consume the message from the RabbitMQ server queue.
 5. **Manager** Process the operation and send an HTTP request to the callback URL with the operation result.
 
 Consumers are running processes that keep listening to the queue messages.  
@@ -29,7 +27,6 @@ A console command ```bin/console app:consumer``` is provided to launch consumers
 ## Structure
 
 ```bash
-.
 bin/       <- Executables (console, behat, ...)
 config/    <- Environment configurations
 features/  <- Behat features
@@ -42,7 +39,7 @@ var/
 web/       <- App entry points
 ```
 
-## Gettint started
+## Getting started
 
 1. ```composer install ```
 2. Edit the config files and configure the RabbitMQ server parameters.
@@ -60,8 +57,8 @@ A simple example is provided for each testing tool:
 Run them with:
 
 ```bash
-bin/behat
-bin/phpspec run
+bin/behat --format pretty
+bin/phpspec run --format pretty
 bin/phpunit
 ```
 

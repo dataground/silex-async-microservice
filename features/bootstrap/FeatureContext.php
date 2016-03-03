@@ -23,9 +23,9 @@ class FeatureContext extends MinkContext implements Context, SnippetAcceptingCon
     }
 
     /**
-     * @When I do something with :methodArgument
+     * @When I do something with :argument
      */
-    public function someMethod($methodArgument) {
-        echo "Working Behat step with argument: $methodArgument.";
+    public function someMethod($argument) {
+        echo "Working Behat step with argument: $argument.";
     }
 }

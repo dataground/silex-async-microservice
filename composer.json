@@ -1,9 +1,9 @@
 {
-    "name": "silex-base",
-    "description": "Silex skeleton with Behat, PHPSpec, PHPUnit and RabbitMQ producer + consumer.",
+    "name": "silex-async-microservice",
+    "description": "Silex asynchronous microservice skeleton.",
     "license": "MIT",
-    "keywords": ["silex", "microservice", "ddd", "behat", "phpspec", "phpunit", "rabbitmq"],
-    "authors": [
+    "keywords": ["silex", "asynchronous", "microservice", "behat", "phpspec", "phpunit", "rabbitmq"],
+    "author": [
         {
             "name": "Jose Manuel Garcia Maleno",
             "email": "jmgarciamaleno@gmail.com"

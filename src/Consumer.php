@@ -20,10 +20,10 @@ class Consumer
     /**
      * Consumer constructor.
      *
-     * @param string $host Hostname of the RabbitMQ server.
-     * @param int    $port Port of the RabbitMQ server.
-     * @param string $user User name of the RabbitMQ server.
-     * @param string $pass Password for the user in the RabbitMQ server.
+     * @param string $host  Hostname of the RabbitMQ server.
+     * @param int    $port  Port of the RabbitMQ server.
+     * @param string $user  User name of the RabbitMQ server.
+     * @param string $pass  Password for the user in the RabbitMQ server.
      * @param string $queue Queue name to use. If it doesn't exists, it will be created.
      *
      * @author Jose Manuel García Maleno <josemanuel.garcia@unidadeditorial.es>
